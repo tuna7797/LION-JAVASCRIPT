@@ -10,9 +10,14 @@
 
 ### Basic
 
-- [x] Code Structure [바로가기] (https://www.naver.com)
-- [ ] Variable 바로가기
-- [ ] Strict Mode 바로가기
-- [ ] Gloval This 바로가기
-- [ ] Data Types 바로가기
-- [ ] Type Coversion 바로가기
+- [x] Code Structure [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/01.codeStructure.js)
+- [x] Variable [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/02.variables.js)
+- [x] Strict Mode [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/03.strictMode.js)
+- [x] Global This [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/04.globalThis.js)
+- [x] Data Types [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/05.dataTypes.js)
+- [ ] Type Conversion [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/06.typeConversion.js)
+
+## Operations
+
+- [ ] Operations (기본 연산자) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/07-1.operations.js)
+- [ ] Operations (비교 연산자) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/07-2.operations.js)
