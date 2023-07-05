@@ -1,3 +1,2 @@
-console.log('hello js');
-
-// const a = 10;
+// console.log('hello js!');
+// confirm('정말 지울꺼야..?');
