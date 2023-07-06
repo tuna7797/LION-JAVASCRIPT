@@ -61,6 +61,7 @@ if (thisTime === MORNING) {
 /* switch vs. if -------------------------------------------------------- */
 
 /* 
+
 0 = '일'
 1 = '월'
 2 = '화'
@@ -68,6 +69,7 @@ if (thisTime === MORNING) {
 4 = '목'
 5 = '금'
 6 = '토' 
+
 */
 
 //  1. 랜덤한 수를 생성
@@ -101,6 +103,8 @@ function getDay(dayValue) {
   }
 }
 
+// const today = getDay(getRandom(7))
+
 function isWeekend(dayValue) {
   const today = getDay(getRandom(dayValue));
 
@@ -129,10 +133,23 @@ console.log(today);
 // 요일을 가지고 주말이냐 아니냐? isWeekend 함수를 만들기
 
 /* 
+
 function sum(a,b){
   
   return a + b;
 }
+
+
 const value = sum(1,3);
+
+
 console.log( value );
+
+
+
+
+
+
+
+
  */
