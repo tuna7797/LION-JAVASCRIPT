@@ -153,14 +153,17 @@ movePage(
 // Immediately Invoked Function Expression
 let IIFE;
 
+// 함수가 선언 됨과 동시에 실행되는 것을 말합니다.
+// JavaScript 함수는 그 자체로 값(literal)
+// 함수 값을 즉시 실행 (이름 없이 호출)
+
 // 변수의 보호
 // 은닉화 incapsulation(캡슐화)
 
 // 클로저 closure
 
-import { css as c } from 'css.js';
-
-c();
+// import { css as c } from "css.js";
+// c()
 
 const MASTER = (function (g) {
   console.log(g);
