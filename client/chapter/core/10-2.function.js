@@ -15,7 +15,7 @@ const resultZ = calcTotal(9000, -2500, 5000, 11900);
 // console.log(resultZ);
 
 // 함수 선언 → 일반 함수 (표현)식
-let calculateTotal = function () {
+let calculateTotal = function (a, b, ...args) {
   // console.log( arguments );
   // 함수 안에서만 접근 가능한 인수들의 집합 객체로서 배열과 유사한 형태를 가지고 있는 이것은 ? : arguments
 
@@ -131,6 +131,9 @@ const movePage = function (url, success, fail) {
     // fail()
   }
 };
+
+function callback() {}
+setTimeout(callback, 3000);
 
 movePage(
   'www.naver.com',
