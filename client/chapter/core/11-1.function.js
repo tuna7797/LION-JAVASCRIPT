@@ -174,7 +174,47 @@ function getP(object) {
 // delete authUser.uid
 // console.log( authUser );
 
-removeProperty(authUser, name);
+function isEmptyObject(object) {
+  return getProp(object).length === 0 ? true : false;
+}
+
+function removeProperty(object, key) {
+  if (typeof object !== 'object') {
+    throw new Error('....');
+  }
+
+  if (typeof key !== 'string') {
+    throw new Error('....');
+  }
+
+  if (key === 'all') {
+    for (let key of getProp(object)) {
+      object[key] = null;
+    }
+
+    return object;
+  }
+
+  object[key] = null;
+
+  return object;
+}
+
+// removeProperty(authUser,'all');
+
+// authUser = {
+//   name:null;
+// }
+
+function deleteProperty(object, key) {
+  delete object[key];
+
+  return object;
+}
+
+deleteProperty(authUser, 'name'); // authUser = {        }
+
+// 함수의 실행부
 
 // 단축 프로퍼티
 let name = '선범';
@@ -182,18 +222,102 @@ let email = 'seonbeom2@euid.dev';
 let authorization = 'Lv. 99';
 let isLogin = true;
 
+const student = { name, email, authorization, isLogin };
+
+console.log(student);
+
 // 프로퍼티 이름 제한
 // 예약어: class, if, switch, for, while, ...
 
 // 객체가 프로퍼티를 포함하는 지 유무를 반환하는 유틸리티 함수 isEmptyObject 작성
-function isEmptyObject() {
-  return null;
-}
+
+isEmptyObject(authUser); // false
 
 /* ------------------------------------------- */
 /* 배열 구조 분해 할당  destructuring assignments   */
 /* ------------------------------------------- */
 
+// 배열의 구조분해할당 : 순서가 정해져있다. 변수 이름을 바꿀 수 있다.
+
+let color = ['#ff0000', '#2b00ff', '#00ff2f'];
+
+let [r, b, g] = color;
+
+for (let [key, value] of Object.entries(authUser)) {
+  // let key = keyValue[0];
+  // let value = keyValue[1];
+  console.log(key);
+}
+
+// let red = color[0];
+// let blue = color[1];
+// let green = color[2];
+
+console.log(g);
+
+// const [a,b,c,d] = document.querySelectorAll('nav li button');
+
+// a.addEventListener('click',()=>{})
+// b.addEventListener('click',()=>{})
+// c.addEventListener('click',()=>{})
+// d.addEventListener('click',()=>{})
+
 /* -------------------------------------------- */
 /* 객체 구조 분해 할당  destructuring assignments    */
 /* --------------------------------------------- */
+
+const salaries = {
+  권혜미: 50,
+  이수연: 3000,
+  강예나: 500,
+  김태일: 700,
+};
+
+// const 권혜미 = salaries.권혜미
+// const 이수연 = salaries.이수연
+// const 강예나 = salaries.강예나
+// const 김태일 = salaries.김태일
+
+const { 권혜미: 미미 = 'mimi', 이수연, 강예나, 김태일 } = salaries;
+
+console.log(미미);
+
+const salaries2 = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+};
+
+// const {a:권혜미,b,c,d} = salaries;
+
+// 객체의 구조분해할당 : 순서가 정해져있지 않다. 변수의 이름을 바꿀 수 있을까? yes
+
+function setElementCss(options) {
+  // let width = options.width;
+  // let color = options.color;
+  // const {
+  //   width:w = 100,
+  //   height:h = 10,
+  //   overflow = '',
+  //   color:c = '#fff'
+  // } = options;
+
+  const { width, height, overflow, color } = options;
+
+  console.log(width, height);
+}
+
+const defaults = {
+  overflow: false,
+  height: 200,
+  width: 100,
+  color: 'orange',
+};
+
+setElementCss({
+  height: 100,
+  color: 'red',
+  overflow: true,
+  width: 50,
+});
