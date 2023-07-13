@@ -17,10 +17,14 @@
 - [x] Data Types [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/05.dataTypes.js)
 - [x] Type Conversion [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/06.typeConversion.js)
 
+---
+
 ## Operations
 
 - [x] Operations (기본 연산자) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/07-1.operations.js)
 - [x] Operations (비교 연산자) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/07-2.operations.js)
+
+---
 
 ## Condition
 
@@ -28,6 +32,8 @@
 - [x] condition (논리연산자) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/08-2.condition.js)
 - [x] condition (switch..case) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/08-3.condition.js)
 - [x] condition (nullish) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/08-4.condition.js)
+
+---
 
 ## Loop
 
@@ -37,11 +43,15 @@
 - [x] loop (for...in) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/09-4.loop.js)
 - [x] loop (for...of) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/09-5.loop.js)
 
+---
+
 ## Function
 
 - [x] function (함수선언문) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/10-1.function.js)
 - [x] function (함수표현식) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/10-2.function.js)
 - [x] function (화살표함수) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/10-3.function.js)
+
+---
 
 ## Object
 
@@ -50,11 +60,45 @@
 - [x] object (garbage collection) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-3.object.js)
 - [x] object (method and this) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-4.object.js)
 
+---
+
 ## Prototype
 
-- [x] prototype (프로토타입의 상속) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-1.prototype.js)
-- [x] prototype (생성자 함수) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-2.prototype.js)
+- [x] prototype (프로토타입의 상속) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12.prototype.js)
+- [ ] prototype (클래스) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/13.classes.js)
+
+---
 
 ## Closure
 
-- [ ] Closure (클로저) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/13.closure.js)
+- [ ] Closure (클로저) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/14-1.closure.js)
+- [ ] Closure (시나리오) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/14-2.closure.js)
+
+---
+
+## OptionalChainning & wrapper
+
+- [ ] OptionalChainning(옵셔널체이닝) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/15.OptionalChainning.js)
+- [ ] Wrapper(wrapper object) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/16.wrapper.js)
+
+---
+
+## Number
+
+- [ ] Number(number Type) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/17.number.js)
+
+---
+
+## String
+
+- [ ] String(string Type) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/18.string.js)
+
+---
+
+## Array
+
+- [ ] Array(array Type) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/19.array.js)
+
+---
+
+## 예외처리
