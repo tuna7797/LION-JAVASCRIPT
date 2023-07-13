@@ -2,6 +2,8 @@
 /* Functions → Arrow      */
 /* ---------------------- */
 
+// 'use strict'
+
 const calculateTotal = function (moneyA, moneyB, moneyC, moneyD) {
   // arguments
   return moneyA + moneyB + moneyC + moneyD;
@@ -123,12 +125,6 @@ const user = {
     console.log(this.total);
   },
 };
-
-function aa() {
-  function bb() {}
-
-  bb();
-}
 
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
