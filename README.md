@@ -45,15 +45,15 @@
 
 ## Object
 
-- [ ] object (객체) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-1.object.js)
-- [ ] object (copy by reference) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-2.object.js)
-- [ ] object (garbage collection) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-3.object.js)
-- [ ] object (method and this) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-4.object.js)
+- [x] object (객체) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-1.object.js)
+- [x] object (copy by reference) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-2.object.js)
+- [x] object (garbage collection) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-3.object.js)
+- [x] object (method and this) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/11-4.object.js)
 
 ## Prototype
 
-- [ ] prototype (프로토타입의 상속) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-1.prototype.js)
-- [ ] prototype (생성자 함수) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-2.prototype.js)
+- [x] prototype (프로토타입의 상속) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-1.prototype.js)
+- [x] prototype (생성자 함수) [바로가기](https://github.com/tuna7797/lion-javascript/blob/01.core/client/chapter/core/12-2.prototype.js)
 
 ## Closure
 

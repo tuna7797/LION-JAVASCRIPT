@@ -15,6 +15,8 @@ text = '멋쟁이 사자처럼 6기';
 
 let conversationTool = messenger;
 
+// 참조복사 or 얕은복사 or 깊은복사
+
 // delete conversationTool.name;
 
 // 비교 (복사 vs. 참조)

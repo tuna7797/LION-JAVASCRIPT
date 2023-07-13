@@ -241,7 +241,7 @@ isEmptyObject(authUser); // false
 
 let color = ['#ff0000', '#2b00ff', '#00ff2f'];
 
-let [r, b, g] = color;
+let [red, blue, green] = color;
 
 for (let [key, value] of Object.entries(authUser)) {
   // let key = keyValue[0];
@@ -253,7 +253,7 @@ for (let [key, value] of Object.entries(authUser)) {
 // let blue = color[1];
 // let green = color[2];
 
-console.log(g);
+console.log(green);
 
 // const [a,b,c,d] = document.querySelectorAll('nav li button');
 
@@ -273,12 +273,14 @@ const salaries = {
   김태일: 700,
 };
 
+// 객체의 구조분해할당 : 순서가 정해져있지 않다. 변수의 이름을 바꿀 수 있을까? yes
+
 // const 권혜미 = salaries.권혜미
 // const 이수연 = salaries.이수연
 // const 강예나 = salaries.강예나
 // const 김태일 = salaries.김태일
 
-const { 권혜미: 미미 = 'mimi', 이수연, 강예나, 김태일 } = salaries;
+const { 권혜미: 미미 = 'mimi', 이수연 = 'su', 강예나, 김태일 } = salaries;
 
 console.log(미미);
 
@@ -290,8 +292,6 @@ const salaries2 = {
 };
 
 // const {a:권혜미,b,c,d} = salaries;
-
-// 객체의 구조분해할당 : 순서가 정해져있지 않다. 변수의 이름을 바꿀 수 있을까? yes
 
 function setElementCss(options) {
   // let width = options.width;
