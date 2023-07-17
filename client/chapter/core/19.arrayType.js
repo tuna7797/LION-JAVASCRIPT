@@ -41,8 +41,20 @@ console.log(friends);
 // 배열 요소 순환(loop)
 // for 문, for ~ of문
 
+for (let i = 0; i < friends.length; i++) {
+  // console.log(friends[i]);
+}
+
+for (let value of friends) {
+  // console.log( value );
+}
+
 // 배열 복사
-let copiedArray;
+// let copiedArray = [...friends];
+// let copiedArray = friends.slice();
+let copiedArray = friends.toSorted();
+
+console.log(copiedArray);
 
 // 다차원 배열
 // 행렬을 저장하는 용도
@@ -54,3 +66,5 @@ const matrix = [
 ];
 
 // 행렬의 정중앙에 위치한 요소를 찾으려면?
+
+matrix[1][1];

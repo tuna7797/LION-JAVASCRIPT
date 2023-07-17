@@ -75,5 +75,34 @@ nav > ul > li:hover > button{
 
 
 
+.userCard{
+  max-width: 350px;
+  display:flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 1rem;
+  position: relative;
+  gap:0.3rem;
+  margin-bottom: 1rem;
+  transition:all .3s;
+}
+
+.userCard:hover{
+  transform:translate(-3px,-3px);
+  box-shadow: 2px 2px 2px 2px #00000066;
+}
+
+.imageField{
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000;
+}
+
+
+
 
 
