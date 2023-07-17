@@ -97,4 +97,6 @@ try {
   // confirm('해당 데이터를 불러오는데 실패했습니다. 다시 시도할까요?'); // 예외 처리
 
   document.body.innerHTML = `404 not found`;
+} finally {
+  console.log(' 에러가 발생하여도 해당 코드는 작동합니다. ');
 }
