@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   globals: {
-    getNode: 'readOnly',
+    gsap: 'readOnly',
   },
   overrides: [
     {
