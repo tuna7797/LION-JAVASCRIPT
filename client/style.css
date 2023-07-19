@@ -153,6 +153,33 @@ p{
   border: 1px solid black;
 }
 
+ul{
+  list-style: none;
+  display:flex;
+  gap:1rem;
+  justify-content: center;
+}
+
+ul > li{
+  background: rgba(0, 157, 255, 0.2);
+  padding:1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+
+ul > li:hover{
+  background: rgba(0, 157, 255, 0.654);
+}
+
+button{
+  background:transparent;
+  border: none;
+  cursor: inherit;
+}
+
+
+
 
 
 
