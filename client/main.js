@@ -7,6 +7,7 @@ import { getNode, clearContents, insertLast } from './lib/index.js';
 
 // 3. result 출력 하기
 
+const calculator = getNode('.calculator');
 const first = getNode('#firstNumber');
 const second = getNode('#secondNumber');
 const result = getNode('.result');
@@ -41,9 +42,23 @@ function handleClear() {
 }
 
 // 2. clear 버튼에 이벤트 핸들러를 연결한다.
-clear.addEventListener('click', handleClear);
-first.addEventListener('input', handleInput);
-second.addEventListener('input', handleInput);
+// clear.addEventListener('click', handleClear);
+// first.addEventListener('input', handleInput);
+// second.addEventListener('input', handleInput);
+
+//* 3페이지: 전체 이벤트 핸들링
+function handleCalculator(e) {
+  const target = e.target.closest('input');
+  console.log(target);
+  if (!target) return;
+  if (target === clear) {
+    handleClear();
+  } else {
+    handleInput();
+  }
+}
+//* 입력값이 변경될 때마다 합을 계산하도록 이벤트 리스너 등록
+calculator.addEventListener('input', handleCalculator);
 
 function page2() {
   const calculator = getNode('.calculator');
