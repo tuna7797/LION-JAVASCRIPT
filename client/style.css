@@ -53,6 +53,7 @@ input[type=submit]{
   cursor: pointer;
   overflow: hidden;
   transition: background .3s;
+    line-height: 1.5;
 }
 
 .result:hover{
