@@ -1,6 +1,7 @@
 import { jujeobData } from './data/data.js';
 
 import {
+  shake,
   getNode,
   addClass,
   showAlert,
@@ -10,6 +11,7 @@ import {
   clearContents,
   isNumericString,
   toggleClass,
+  copy,
 } from './lib/index.js';
 
 const submit = getNode('#submit');
@@ -31,7 +33,11 @@ const resultArea = getNode('.result');
 // [phase-3]
 // 1. 잘못된 정보를 입력 받으면 사용자에게 알려주세요.
 // 2. 재사용 가능한 함수 (showAlert)
-// 3.
+// 3. gsap shake 기능 구현
+// 4. animation 모듈화
+
+// [phase-4]
+// 1. result 클릭 이벤트 바인딩
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -43,18 +49,16 @@ function handleSubmit(e) {
   if (!name || name.replace(/\s*/g, '') === '') {
     showAlert('.alert-error', '이름을 입력해 주세요!!', 2000);
 
-    gsap.to('form', {
-      duration: 0.1,
-      x: -10,
-      repeat: 5,
-      yoyo: true,
-    });
+    shake.restart();
 
     return;
   }
 
   if (!isNumericString(name)) {
     showAlert('.alert-error', '제대로된 이름을 입력 해주세요!!', 2000);
+
+    shake.restart();
+
     return;
   }
 
@@ -62,4 +66,13 @@ function handleSubmit(e) {
   insertLast(resultArea, pick);
 }
 
+function handleCopy() {
+  const text = resultArea.textContent;
+
+  copy(text).then(() => {
+    showAlert('.alert-success', '클립보드 복사 완료!');
+  });
+}
+
 submit.addEventListener('click', handleSubmit);
+resultArea.addEventListener('click', handleCopy);
