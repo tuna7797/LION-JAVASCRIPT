@@ -38,6 +38,8 @@ const resultArea = getNode('.result');
 
 // [phase-4]
 // 1. result 클릭 이벤트 바인딩
+// 2. result 클릭시 클립보드에 복사해주세요
+// 3. 재사용 가능한 함수로 만들어 주세요
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -65,6 +67,14 @@ function handleSubmit(e) {
   clearContents(resultArea);
   insertLast(resultArea, pick);
 }
+
+// 이름을 제대로 입력 했을 때 클립보드에 복사가 될 수 있도록.
+
+// let state = false;
+
+// state = true;
+
+// if(state){  ...logic }
 
 function handleCopy() {
   const text = resultArea.textContent;
