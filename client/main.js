@@ -1,10 +1,12 @@
 import {
   attr,
+  clearContents,
   diceAnimation,
+  endScroll,
   getNode,
   getNodes,
   insertLast,
-  endScroll,
+  memo,
 } from './lib/index.js';
 
 // [phase-1] 주사위 굴리기
@@ -24,14 +26,18 @@ import {
 //       - hidden 속성 false 만들기
 //       - 초기화 버튼 이벤트 바인딩
 //       - hidden 속성 true 만들기
+//       - 초기화 버튼 이벤트 바인딩
+//       - hidden 속성 true 만들기
+// 3. 주사위 값을 가져와서 랜더링
 
 // 배열 구조 분해 할당
-
 const [startButton, recordButton, resetButton] = getNodes(
   '.buttonGroup > button'
 );
 const recordListWrapper = getNode('.recordListWrapper');
-const tbody = getNode('.recordList tbody');
+memo('@tbody', () => getNode('.recordList tbody')); // setter
+
+memo('@tbody'); // getter
 
 //? 미니과제
 // disableElement(node)
@@ -62,7 +68,7 @@ function renderRecordItem() {
   const diceValue = +attr('#cube', 'data-dice'); // 암시적 형변환! 또는 -> attr('#cube', 'data-dice') /1
   //attr()에 인수를 두개만 적으면 getter (값을 가져옴)
 
-  insertLast(tbody, createItem(diceValue));
+  insertLast(memo('@tbody'), createItem(diceValue));
 
   endScroll(recordListWrapper);
 }
@@ -86,7 +92,7 @@ const handleRollingDice = (() => {
     }
     isClicked = !isClicked;
   };
-})(); //함수를 ()로 감싸고 ()한번더 해주면 즉시 실행 함수
+})(); //함수를 ()로 감싸고 ()한번더 해주면 즉시 실행 함수 -> IIFE(즉시 호출 함수 표현식)
 
 function handleRecord() {
   recordListWrapper.hidden = false;
@@ -98,6 +104,11 @@ function handleReeset() {
   recordListWrapper.hidden = true;
   resetButton.disabled = true;
   recordButton.disabled = true;
+
+  clearContents(memo('@tbody'));
+
+  count = 0;
+  total = 0;
 }
 
 startButton.addEventListener('click', handleRollingDice);
