@@ -3,7 +3,7 @@ import { getNode } from '../dom/index.js';
 //* Memoization
 //* https://bit.ly/memoiz
 //* 객체를 만들어서 key:value 쌍으로 저장
-
+//  Closure 와 IIFE(즉시 호출 함수 표현식) 사용
 export const memo = (() => {
   const cache = {};
 

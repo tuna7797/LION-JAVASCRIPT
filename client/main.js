@@ -65,7 +65,7 @@ function createItem(value) {
 
 function renderRecordItem() {
   // 큐브의 data-dice 값 가져오기
-  const diceValue = +attr('#cube', 'data-dice'); // 암시적 형변환! 또는 -> attr('#cube', 'data-dice') /1
+  const diceValue = +attr(memo('cube'), 'data-dice'); // 암시적 형변환! 또는 -> attr('#cube', 'data-dice') /1
   //attr()에 인수를 두개만 적으면 getter (값을 가져옴)
 
   insertLast(memo('@tbody'), createItem(diceValue));
