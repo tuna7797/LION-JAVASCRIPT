@@ -25,48 +25,33 @@ const URL = 'https://jsonplaceholder.typicode.com/users';
 // promise 객체만 찾으면 await 으로 까주면 되는거라 promise 객체를 찾는거
 
 
-//함수로 하는 경우!
-async function getUserData(){
-  const 응답 = await fetch(URL);
-  const 데이터 = await 응답.json();
+//* 함수로 하는 경우!
+// async function getUserData(){
+//   const 응답 = await fetch(URL);
+//   const 데이터 = await 응답.json();
 
-  return 데이터
-}
+//   return 데이터
+// }
 
-const data = getUserData()
+// const data = getUserData()
 
-console.log(await data);
+// console.log(await data);
 //async 함수는 무조건 프라미스 객체를 반환하니까 await으로 한번 더 까준다!
 
 
 
-//오픈웨더 샘플..
-const API_KEY = "b68177078f5cb7c53e861421586aee13";
+const response = await fetch(URL);
+const data = await response.json();
 
-const getCurrentWeather = async (lat, lon) => {
-  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+console.log( data );
 
-  const response = await fetch(URL);
-  const weatherData = await response.json();
-  return weatherData;
-};
+// fetch(URL).then((result)=>{
 
-const printWeather = (weatherInfo) => {
-  console.log(weatherInfo);
-  console.log(weatherInfo.name + "의 날씨는 ? " + weatherInfo.weather[0].main);
-};
+//     result // response object
+//     return result.json()
+// })
+// .then((result)=>{
+//   console.log( result );
+// })
 
-const geoOk = async (position) => {
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
 
-  const weatherInfo = await getCurrentWeather(lat, lon);
-
-  printWeather(weatherInfo);
-};
-
-const geoNg = () => {
-  alert("위치를 찾을 수 없습니다.");
-};
-
-navigator.geolocation.getCurrentPosition(geoOk, geoNg);
