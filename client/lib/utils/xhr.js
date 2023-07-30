@@ -10,6 +10,8 @@
 
 */
 
+import { refError } from '../error/refError.js';
+
 export function xhr({
   method = 'GET',
   url = '',
@@ -123,3 +125,101 @@ xhr.delete = (url, onSuccess, onFail) => {
 // xhr.delete()
 
 // xhr.get()
+
+/* promise API -------------------------- */
+
+const defaltOptions = {
+  method: 'GET',
+  url: '',
+  body: null,
+  errorMessage: '서버와의 통신이 원활하지 않습니다.',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
+};
+
+export function xhrPromise(options) {
+  // mixin
+
+  // const config = {...defaultOptions,...options} //전개 구문(Spread Syntax)
+  const { method, url, body, errorMessage, headers } = Object.assign(
+    {},
+    defaltOptions,
+    options
+  ); //명시적 객체합성
+
+  if (!url) refError('서버와 통신할 url은 필수값 입니다.');
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open(method, url);
+
+  Object.entries(headers).forEach(([key, value]) => {
+    xhr.setRequestHeader(key, value);
+  });
+
+  xhr.send(JSON.stringify(body));
+
+  return new Promise((resolve, reject) => {
+    xhr.addEventListener('readystatechange', () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          resolve(JSON.parse(xhr.response));
+        } else {
+          reject({ message: errorMessage });
+        }
+      }
+    });
+  });
+}
+
+// xhrPromise({
+//   url: 'https://jsonplaceholder.typicode.com/users',
+// }).then((res) => {
+//   res.forEach((item) => {
+//     console.log(item);
+//   });
+// });
+
+xhrPromise.get = (url) => {
+  return xhrPromise({ //return 값이 없으면 undefined
+    url,
+  });
+};
+
+xhrPromise.post = (url,body)=>{
+  return xhrPromise({
+    url,
+    body,
+    method:'POST'
+  })
+}
+
+xhrPromise.delete = (url)=>{
+  return xhrPromise({
+    url,
+    method:'DELETE'
+  })
+}
+
+xhrPromise.put = (url,body)=>{
+  return xhrPromise({
+    url,
+    body,
+    method:'PUT'
+  })
+}
+
+// xhrPromise객체에 메소드 만드는 법
+
+//  옵션이라는 객체를 구조분해 할당하고
+//  기본값으로 사용하여 xhrPromise함수는 작동하며,
+
+//  xhrPromise객체에 post메소드를 선언하는데,
+//  그 post메소드 실행은 xhrPromise함수에 
+//  알규먼트 url, body를 메소드의 알규먼트로 받고,
+//  method는 post메소드 내부에 정의된 알규먼트다
+
+
+xhrPromise.get('https://jsonplaceholder.typicode.com/users');
