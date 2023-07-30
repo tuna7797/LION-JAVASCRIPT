@@ -36,7 +36,7 @@ const defaultOptions = {
   errorMessage: '알 수 없는 오류가 발생했습니다.',
 };
 
-function delayP(options) {
+export function delayP(options) {
   let config = { ...defaultOptions };
 
   if (typeof options === 'number') {
