@@ -2,13 +2,15 @@
 
 import { 
   getNode as $,
-  insertLast,
   tuna,
-  renderUserCard, 
-  changeColor, 
+  attr,
   delayP, 
+  insertLast,
+  changeColor, 
+  clearContents,
   renderSpinner, 
-  renderEmptyCard 
+  renderUserCard, 
+  renderEmptyCard, 
 } from './lib/index.js';
 
 // 1. tuna 함수를 사용해서 user를 가져와 주세요.
@@ -19,15 +21,28 @@ import {
 //      - inserLast 사용하기.
 // 4. 함수 분리 하기
 
-const useerCardInner = $('.user-card-inner')
+// [phase-2]
+// 1. 에러가 발생 했을 때 
+// 2. empty svg를 생성하고 랜더링 해주세요 
+// 3. 함수 분리
+
+
+// [phase-3]
+// json-server 구성
+// data 설계
+// get, delete 통신 localhost
+// delete => 리랜더링(clear,render)
+
+const userCardInner = $('.user-card-inner')
 
 async function renderUserList(){
 
-  renderSpinner(useerCardInner)
+  renderSpinner(userCardInner)
 
   try{
 
-    await delayP({timeout:2000}) //delayP()는 지연된 로딩을 보여주기 위해(2초로 설정) 널음! 실제론 필요x
+    //await delayP({timeout:2000}) 
+    //delayP()는 지연된 로딩을 보여주기 위해(2초로 설정) 널음! 실제론 필요x
 
     gsap.to('.loadingSpinner',{
       opacity:0,
@@ -38,12 +53,11 @@ async function renderUserList(){
     })
   
 
-    const response = await tuna.get('https://jsonplaceholder.typicode.com/user')
-
+    const response = await tuna.get('http://localhost:3000/users')
     const userData = response.data;
 
     
-    userData.forEach((item)=> renderUserCard(useerCardInner,item))
+    userData.forEach((item)=> renderUserCard(userCardInner,item))
 
     changeColor('.user-card')
 
@@ -53,19 +67,47 @@ async function renderUserList(){
       stagger:0.2, //속도 조절
     })
 
-    // 어디에 랜더링 할껀데? (useerCardInner로 타겟설정) 
+    // 어디에 랜더링 할껀데? (userCardInner로 타겟설정) 
     // 어떤 데이터를 랜더링 할껀데? forEach를 돈 item을 renderUserCard에 보낸다
 
     }
     catch(err){
       console.log(err);
-      renderEmptyCard(useerCardInner)
+      renderEmptyCard(userCardInner)
+       // location.href = '404.html' 특정페이지로 연결
     }
   
 }
 
 
 
-
-
 renderUserList()
+
+
+// 버튼을 클릭 했을 때 해당 article의 id 값을 가져옴.
+
+// - 이벤트 위임 e.target
+// - button 선택하기 -> 클릭한 대상의 가장 가까운... method
+// - attr() ,  dataset
+
+function handleDelete(e){
+  const button = e.target.closest('button');
+  const article = e.target.closest('article')
+
+
+  if(!article || !button) return;
+
+  const id = attr(article,'data-index').slice(5) //user- 를 지워줌
+  
+  tuna.delete(`http://localhost:3000/users/${id}`)  //delete는 브라우저가 서버에 제거 요청을 보냄
+  .then(()=>{ //삭제가 이루어진 후 그 다음에
+    //컨텐츠 항목 전체 지우기
+     clearContents(userCardInner);
+     //컨텐츠 다시 랜더링
+     renderUserList();
+  })
+
+}
+
+
+userCardInner.addEventListener('click',handleDelete);
