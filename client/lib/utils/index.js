@@ -13,5 +13,6 @@ export * from './color.js';
 export * from './delay.js';
 export * from './tiger.js';
 export * from './typeOf.js';
+export * from './storage.js';
 
 
